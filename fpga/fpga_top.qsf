@@ -155,9 +155,7 @@ set_global_assignment -name VERILOG_FILE ../rtl/addr_gen.v
 set_global_assignment -name VERILOG_FILE memory_single_port.v
 set_global_assignment -name QIP_FILE memory_single_port.qip
 set_global_assignment -name VERILOG_FILE fpga_top.v
-set_global_assignment -name VERILOG_FILE dynamic_displayik_16.v
 set_global_assignment -name VERILOG_FILE displayik_7seg_16.v
-set_global_assignment -name VERILOG_FILE display_module_async_16b.v
-set_global_assignment -name VERILOG_FILE display_module_async.v
+
 
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
