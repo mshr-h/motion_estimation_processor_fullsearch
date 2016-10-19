@@ -28,6 +28,7 @@ localparam SAD_WIDTH = $clog2(TB_LENGTH**2) + PE_OUT_WIDTH;
 reg                  req;
 wire [CNT_WIDTH-1:0] min_cnt;
 wire [SAD_WIDTH-1:0] min_sad;
+wire [CNT_WIDTH-1:0] min_mvec;
 wire                 ack;
 
 // detect falling edge
@@ -58,12 +59,13 @@ me_top
   .MEMORY_TB_CONTENT ( MEMORY_TB_CONTENT )
 ) _me_top
 (
-  .rst_n   ( RSTN    ),
-  .clk     ( clk     ),
-  .req     ( req     ),
-  .min_cnt ( min_cnt ),
-  .min_sad ( min_sad ),
-  .ack     ( ack     )
+  .rst_n    ( RSTN     ),
+  .clk      ( clk      ),
+  .req      ( req      ),
+  .min_cnt  ( min_cnt  ),
+  .min_sad  ( min_sad  ),
+  .min_mvec ( min_mvec ),
+  .ack      ( ack      )
 );
 
 /* 7SEG LED
@@ -87,7 +89,7 @@ _displayIK_7seg_16
   .data1   ( {3'h0, SW4N, 3'h0, SW5N, 3'h0, req, 3'h0, ack} ),
   .data2   ( min_cnt    ),
   .data3   ( min_sad    ),
-  .data4   ( 0          ),
+  .data4   ( min_mvec   ),
   .data5   ( 0          ),
   .data6   ( 0          ),
   .data7   ( 0          ),

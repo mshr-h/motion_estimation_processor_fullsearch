@@ -16,6 +16,7 @@ module control_unit
   output reg                  en_pearray_tb,
   output reg  [CNT_WIDTH-1:0] min_cnt,
   output reg  [SAD_WIDTH-1:0] min_sad,
+  output reg  [CNT_WIDTH-1:0] min_mvec,
   output wire                 ack
 );
 
@@ -247,28 +248,33 @@ end
 
 always @(posedge clk or negedge rst_n) begin
   if(~rst_n) begin
-    min_sad <= {SAD_WIDTH{1'b1}};
-    min_cnt <= 0;
+    min_sad  <= {SAD_WIDTH{1'b1}};
+    min_cnt  <= 0;
+    min_mvec <= 0;
   end else begin
     case(state_main)
       INIT     : begin
-        min_sad <= {SAD_WIDTH{1'b1}};
-        min_cnt <= 0;
+        min_sad  <= {SAD_WIDTH{1'b1}};
+        min_cnt  <= 0;
+        min_mvec <= 0;
       end
       WAIT_REQ : begin
-        min_sad <= {SAD_WIDTH{1'b1}};
-        min_cnt <= 0;
+        min_sad  <= {SAD_WIDTH{1'b1}};
+        min_cnt  <= 0;
+        min_mvec <= 0;
       end
       RUNNING  : begin
         if(valid && (min_sad > sad)) begin
-          min_sad <= sad;
-          min_cnt <= cnt_min;
+          min_sad  <= sad;
+          min_cnt  <= cnt_min;
+          min_mvec <= {cnt_y[5:0], cnt_x[5:0]};
         end
       end
       WAIT_REQ_FALL : ;
       default  : begin
-        min_sad <= {SAD_WIDTH{1'bx}};
-        min_cnt <= {CNT_WIDTH{1'bx}};
+        min_sad  <= {SAD_WIDTH{1'bx}};
+        min_cnt  <= {CNT_WIDTH{1'bx}};
+        min_mvec <= {CNT_WIDTH{1'bx}};;
       end
     endcase
   end

@@ -25,6 +25,7 @@ reg                  clk;
 reg                  req;
 wire [CNT_WIDTH-1:0] min_cnt;
 wire [SAD_WIDTH-1:0] min_sad;
+wire [CNT_WIDTH-1:0] min_mvec;
 wire                 ack;
 
 me_top
@@ -37,12 +38,13 @@ me_top
 )
 _me_top
 (
-  .rst_n   ( rst_n   ),
-  .clk     ( clk     ),
-  .req     ( req     ),
-  .min_cnt ( min_cnt ),
-  .min_sad ( min_sad ),
-  .ack     ( ack     )
+  .rst_n    ( rst_n    ),
+  .clk      ( clk      ),
+  .req      ( req      ),
+  .min_cnt  ( min_cnt  ),
+  .min_sad  ( min_sad  ),
+  .min_mvec ( min_mvec ),
+  .ack      ( ack      )
 );
 
 parameter CLK_PERIOD = 10;

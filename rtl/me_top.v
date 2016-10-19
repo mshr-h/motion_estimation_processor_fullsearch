@@ -11,6 +11,7 @@ module me_top
   input  wire                 req,
   output wire [CNT_WIDTH-1:0] min_cnt,
   output wire [SAD_WIDTH-1:0] min_sad,
+  output wire [CNT_WIDTH-1:0] min_mvec,
   output wire                 ack
 );
 
@@ -48,6 +49,7 @@ _control_unit
   .en_pearray_tb ( en_pearray_tb ),
   .min_cnt       ( min_cnt       ),
   .min_sad       ( min_sad       ),
+  .min_mvec      ( min_mvec      ),
   .ack           ( ack           )
 );
 
