@@ -1,9 +1,6 @@
 *.vcd
 *.out
 
-docs/MU500-7SEG-IK
-docs/MU500-RX_SET01-IK
-
 fpga/db
 fpga/greybox_tmp
 fpga/incremental_db
