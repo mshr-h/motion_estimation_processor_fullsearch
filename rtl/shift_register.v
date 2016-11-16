@@ -18,7 +18,7 @@ always @(posedge clk or negedge rst_n) begin
   if(~rst_n)
     core[0] <= 0;
   else if(en)
-    core[0] <= d;
+    core[0] <= #1 d;
 end
 
 genvar i;
@@ -28,7 +28,7 @@ for (i = 1; i < DEPTH; i = i + 1) begin :SHIFT_REG
     if(~rst_n)
       core[i] <= 0;
     else if (en)
-      core[i] <= core[i-1];
+      core[i] <= #1 core[i-1];
   end
 end
 endgenerate

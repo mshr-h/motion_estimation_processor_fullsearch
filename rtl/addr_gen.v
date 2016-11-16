@@ -26,8 +26,8 @@ always @(posedge clk or negedge rst_n) begin
     addr_sw <= 0;
     addr_tb <= 0;
   end else begin
-    addr_sw <= nxt_sw;
-    addr_tb <= nxt_tb;
+    addr_sw <= #1 nxt_sw;
+    addr_tb <= #1 nxt_tb;
   end
 end
 
