@@ -1,0 +1,32 @@
+[*]
+[*] GTKWave Analyzer v3.3.71 (w)1999-2016 BSI
+[*] Wed Nov 16 04:05:13 2016
+[*]
+[dumpfile] "C:\Users\admin\Dropbox\Documents\_working\research\motion_estimation_processor_fullsearch\testbench\tb_me_top.vcd"
+[dumpfile_mtime] "Wed Nov 16 04:04:33 2016"
+[dumpfile_size] 7995280
+[savefile] "C:\Users\admin\Dropbox\Documents\_working\research\motion_estimation_processor_fullsearch\testbench\tb_me_top.gtkw"
+[timestart] 37982
+[size] 1920 1027
+[pos] -1 -1
+*-9.000000 41729 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_me_top.
+[treeopen] tb_me_top._me_top.
+[treeopen] tb_me_top._me_top._pe_array.PE_ARRAY[0].
+[sst_width] 197
+[signals_width] 142
+[sst_expanded] 1
+[sst_vpaned_height] 302
+@200
+-testbench
+@28
+tb_me_top.rst_n
+tb_me_top.clk
+tb_me_top.req
+tb_me_top.ack
+@22
+tb_me_top.min_mvec[11:0]
+@25
+tb_me_top.min_sad[15:0]
+[pattern_trace] 1
+[pattern_trace] 0
