@@ -25,8 +25,8 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 // 8-bit AD
-// assign ad = (nxt_sw > nxt_tb) ? nxt_sw - nxt_tb
-                              // : nxt_tb - nxt_sw;
+assign ad = (nxt_sw > nxt_tb) ? nxt_sw - nxt_tb
+                              : nxt_tb - nxt_sw;
 
 // 4-bit AD
 // assign ad[3:0] = (nxt_sw[7:4] > nxt_tb[7:4]) ? nxt_sw[7:4] - nxt_tb[7:4]
