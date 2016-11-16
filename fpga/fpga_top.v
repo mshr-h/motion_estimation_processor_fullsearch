@@ -26,7 +26,6 @@ localparam CNT_WIDTH = $clog2((SW_LENGTH-TB_LENGTH+1)**2);
 localparam SAD_WIDTH = $clog2(TB_LENGTH**2) + PE_OUT_WIDTH;
 
 reg                  req;
-wire [CNT_WIDTH-1:0] min_cnt;
 wire [SAD_WIDTH-1:0] min_sad;
 wire [CNT_WIDTH-1:0] min_mvec;
 wire                 ack;
@@ -62,7 +61,6 @@ me_top
   .rst_n    ( RSTN     ),
   .clk      ( clk      ),
   .req      ( req      ),
-  .min_cnt  ( min_cnt  ),
   .min_sad  ( min_sad  ),
   .min_mvec ( min_mvec ),
   .ack      ( ack      )
@@ -89,9 +87,9 @@ _displayIK_7seg_16
   .data1   ( {3'h0, SW4N, 3'h0, SW5N, 3'h0, req, 3'h0, ack} ),
   .data2   ( 0          ),
   .data3   ( 0          ),
-  .data4   ( min_cnt    ),
-  .data5   ( min_sad    ),
-  .data6   ( min_mvec   ),
+  .data4   ( min_sad    ),
+  .data5   ( min_mvec   ),
+  .data6   ( 0          ),
   .data7   ( 0          ),
   .data8   ( 0          ),
   .data9   ( 0          ),
