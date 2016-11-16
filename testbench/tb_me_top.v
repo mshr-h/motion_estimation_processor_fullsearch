@@ -23,7 +23,6 @@ localparam SAD_WIDTH = $clog2(TB_LENGTH**2) + PE_OUT_WIDTH;
 reg                  rst_n;
 reg                  clk;
 reg                  req;
-wire [CNT_WIDTH-1:0] min_cnt;
 wire [SAD_WIDTH-1:0] min_sad;
 wire [CNT_WIDTH-1:0] min_mvec;
 wire                 ack;
@@ -41,7 +40,6 @@ _me_top
   .rst_n    ( rst_n    ),
   .clk      ( clk      ),
   .req      ( req      ),
-  .min_cnt  ( min_cnt  ),
   .min_sad  ( min_sad  ),
   .min_mvec ( min_mvec ),
   .ack      ( ack      )
