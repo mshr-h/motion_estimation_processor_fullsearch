@@ -19,8 +19,8 @@ module fpga_top
 parameter TB_LENGTH    = 16;
 parameter SW_LENGTH    = 64;
 parameter PE_OUT_WIDTH = 8;
-parameter MEMORY_SW    = "./memory_sw.mif";
-parameter MEMORY_TB    = "./memory_tb.mif";
+parameter MEMORY_SW    = "../memory_sw.mif";
+parameter MEMORY_TB    = "../memory_tb.mif";
 
 localparam ADDR_SW   = $clog2(SW_LENGTH**2);
 localparam ADDR_TB   = $clog2(TB_LENGTH**2);

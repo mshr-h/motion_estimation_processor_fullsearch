@@ -1,14 +1,12 @@
 *.vcd
 *.out
 
-fpga/db
-fpga/greybox_tmp
-fpga/incremental_db
-fpga/output_files
-fpga/simulation
-fpga/memory_sw.mif
-fpga/memory_tb.mif
-fpga/*.qws
+/fpga/*/*
+!/fpga/*/fpga_top.qpf
+!/fpga/*/fpga_top.qsf
+!/fpga/*/fpga_top.sdc
+!/fpga/*/memory_*.qip
+!/fpga/*/*.v
 
-memory/memory_sw.txt
-memory/memory_tb.txt
+/fpga/memory_*.mif
+/memory/memory_*.txt
