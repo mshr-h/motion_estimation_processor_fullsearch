@@ -10,6 +10,7 @@ We apply the following process for each of the macro blocks in the current frame
 We first find a block which has the lowest matching error in the search window of the reference frame.
 We use sum of absolute errors between corresponding pixels.
 Then, the displacement between the current macro block to the best matching macro block is motion vector.
+
 ![Figure of Motion Estimation](docs/motion_estimation.png)
 
 ## Description
@@ -18,7 +19,9 @@ Then, the displacement between the current macro block to the best matching macr
 - Only integer pixel motion estimation
 - Template Block: 16x16 pixels
 - Search Range  : ±24 pixels
-- It's currentry running on MU500-RX FPGA board \& MU500-7SEG 7seg LED board
+- Supported devices
+  - MU500-RX FPGA board \& MU500-7SEG 7seg LED board
+  - DE1-SoC
 
 ## Required Tools
 
@@ -80,13 +83,13 @@ The default value is `64` pixel.
 Bit width of the Processor Element's output.
 The default value is `8` bit.
 
-### MEMORY_SW_CONTENT
+### MEMORY\_SW\_CONTENT
 
 Path to the search window memory file which contains pixel values.
 If you run on iverilog, you should specify text file. If you compile it with Quartus, you should specify mif file.
 The default value is `"../memory/memory_sw.txt"`.
 
-### MEMORY_TB_CONTENT
+### MEMORY\_\TB\_CONTENT
 
 Path to the template block memory file which contains pixel values.
 If you run on iverilog, you should specify text file. If you compile it with Quartus, you should specify mif file.
