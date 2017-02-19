@@ -1,4 +1,10 @@
-cd testbench
-iverilog -Wall -o tb_me_top.out tb_me_top.v
-vvp tb_me_top.out
-cd ..
+#!/bin/bash
+
+cd testbench/
+TARGET=`ls -1 tb_*.v | sed -e 's/\(.*\)\.v/\1/g'`
+for t in $TARGET
+do
+  iverilog -Wall -o $t.out $t.v
+  vvp $t.out
+done
+
